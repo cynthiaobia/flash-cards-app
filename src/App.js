@@ -1,9 +1,9 @@
 import './App.css';
 import { useState } from 'react';
-import NewOrderPage from './pages/NewOrderPage';
+import NewFlashCardSetPage from './pages/NewFlashCardSetPage';
 import AuthPage from './pages/AuthPage';
 import {Routes, Route} from 'react-router-dom';
-import OrderHistoryPage from './pages/OrderHistoryPage';
+import FlashCardsPage from './pages/FlashCardsPage';
 import NavBar from './components/NavBar';
 import { getUser } from './utilities/users-service';
 
@@ -17,8 +17,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/flashcards/new" element={<NewFlashCardSetPage />} />
+            <Route path="/flashcards" element={<FlashCardsPage />} />
           </Routes>
         </>
       ) 

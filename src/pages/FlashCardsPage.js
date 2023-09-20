@@ -1,7 +1,7 @@
 
 import * as usersService from '../utilities/users-service';
 
-function OrderHistoryPage() {
+function FlashCardsPage() {
 
   const handleCheckToken = async () => {
     const expDate = await usersService.checkToken();
@@ -10,13 +10,13 @@ function OrderHistoryPage() {
 
   return (
     <div>
-      <h1>Order History Page</h1>
+      <h1>All Flash Cards</h1>
 
-      <button onClick={handleCheckToken}>
+      {/* <button onClick={handleCheckToken}>
         Check When My Login Expires
-      </button>
+      </button> */}
     </div>
   )
 } 
 
-export default OrderHistoryPage;
+export default FlashCardsPage;

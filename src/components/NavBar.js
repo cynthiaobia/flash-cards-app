@@ -11,9 +11,9 @@ function NavBar({user, setUser}) {
 
   return(
     <nav>
-      <h2>Welcom, {user.name}</h2>
-      <Link to="/orders">Order History</Link>&nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
+      <h2>Welcome, {user.name}</h2>
+      <Link to="/flashcards">All Flash Cards</Link>&nbsp; | &nbsp;
+      <Link to="/flashcards/new">Create New Flash Card Set</Link>&nbsp; | &nbsp;
       <Link to="" onClick={handleLogout}>Log Out</Link>
     </nav>
   )
