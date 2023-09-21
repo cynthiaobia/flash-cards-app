@@ -8,6 +8,6 @@ const router = express.Router();
 router.post('/flashcards', flashCardSetsCtrl.create);
 
 // GET
-// router.get('/flashcards/:id', flashCardSetsCtrl.show);
+router.get('/flashcards/:id', flashCardSetsCtrl.show);
 
 module.exports = router;

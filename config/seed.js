@@ -4,6 +4,7 @@ require('./database');
 const FlashCardSet = require('../models/FlashCardSet');
 
 (async function() {
+  await FlashCardSet.deleteMany({});
   const flashCardSets = await FlashCardSet.create([
     {
       subject: 'U.S. History',

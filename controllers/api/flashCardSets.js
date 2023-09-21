@@ -16,7 +16,7 @@ async function show(req, res) {
   try{
     const flashCardSet = await FlashCardSet.findById(req.params.id);
     res.status(200).json(flashCardSet);
-    console.log(flashCardSet)
+    console.log('hi')
   }catch(err){
     res.status(400).json({ msg: err.message });
     console.log(err);
