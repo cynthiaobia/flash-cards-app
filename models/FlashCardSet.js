@@ -1,13 +1,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const flashCard = require('./FlashCard');
+
+const flashCardSchema = new Schema({
+  question: {
+    type: String,
+    required: true
+  },
+  answer: {
+    type: String,
+    required: true
+  },
+  isCorrect: {
+    type: Boolean,
+    default: false
+  },
+})
 
 const flashCardSetSchema = new Schema({
   subject: {
     type: String,
     required: true
   },
-  flashCards: [flashCard]
+  flashCards: [flashCardSchema]
 }, {
   timestamps: true
 })
