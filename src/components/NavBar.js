@@ -12,6 +12,7 @@ function NavBar({user, setUser}) {
   return(
     <nav>
       <h2>Welcome, {user.name}</h2>
+      <Link to="/">Home</Link>&nbsp; | &nbsp;
       <Link to="/flashcards">All Flash Cards</Link>&nbsp; | &nbsp;
       <Link to="/flashcards/new">Create New Flash Card Set</Link>&nbsp; | &nbsp;
       <Link to="" onClick={handleLogout}>Log Out</Link>
