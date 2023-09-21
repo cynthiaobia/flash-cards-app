@@ -1,10 +1,8 @@
 
-import NewFlashCardSetForm from "../components/NewFlashCardSetForm/NewFlashCardSetForm";
-
 function NewFlashCardSetPage() {
   return (
     <div>
-      <NewFlashCardSetForm />
+      <h1>Create A New Flash Card Set</h1>
     </div>
   )
 } 
