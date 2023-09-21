@@ -30,7 +30,7 @@ app.use('/api/users', require('./routes/api/users'))
 
 // Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/flashCardSets', ensureLoggedIn, require('./routes/api/flashCardSets'));
+app.use('/api/flashcards', ensureLoggedIn, require('./routes/api/flashCardSets'));
 
 
 // The following "catch all" route (note the *) is necessary
