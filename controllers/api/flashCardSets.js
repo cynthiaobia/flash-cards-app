@@ -35,8 +35,23 @@ async function show(req, res) {
   }  
 }
 
+async function update(req, res) {
+  try {
+    const updatedFlashCardSet = await FlashCardSet.findByIdAndUpdate(
+      req.params.id,
+      req.body, // Update with the new data
+      // { new: true }
+    );
+    res.status(200).json(updatedFlashCardSet);
+  } catch (err) {
+    res.status(400).json(err);
+    console.error('Error updating flash card set:', err);
+  }
+}
+
 module.exports = {
   create,
   show,
-  index
+  index,
+  update
 }

@@ -18,7 +18,7 @@ function AllFlashCardSets () {
     getFlashCards();
   }, []);
   
-  console.log(flashCards);
+  // console.log(flashCards);
 
   return (
     <div>
@@ -27,9 +27,16 @@ function AllFlashCardSets () {
       <nav>
       {flashCards.map(
         flashCard =>
-          <Link id={flashCard._id} key={flashCard._id} to={`/flashcards/${flashCard._id}`}>
+        <div key={flashCard._id}>
+          <Link id={flashCard._id} to={`/flashcards/${flashCard._id}`}>
             {flashCard.subject}
           </Link>
+          {/* <Link id={flashCard._id} to={`/flashcards/update`}>
+            Edit
+          </Link> */}
+        </div>
+          
+          
       )}
     </nav>
 
