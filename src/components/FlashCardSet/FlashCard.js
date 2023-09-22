@@ -1,9 +1,6 @@
-import {useState} from 'react';
 
 function FlashCard (props) {
   const {question, answer, isCorrect} = props.flashCard;
-
-  
 
   return(
     <div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import FlashCard from './FlashCard';
+import FlashCardNav from './FlashCardNav';
 
 function FlashCardSet() {
   const { id } = useParams();
@@ -24,7 +25,6 @@ function FlashCardSet() {
   const handleDelete = async () => {
     try {
       await flashCardsApi.deleteCard(id);
-      // Handle successful deletion, e.g., navigate back to a list page.
     } catch (err) {
       console.error('Error deleting flash card set:', err);
     }
@@ -32,17 +32,41 @@ function FlashCardSet() {
 
   const flashCardArr = flashCardSet.flashCards;
 
+  // Handle Navigation Fxns
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+  const handlePreviousCard = () => {
+    setCurrentCardIndex((prevIndex) =>
+      prevIndex === 0 ? flashCardArr.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextCard = () => {
+    setCurrentCardIndex((prevIndex) =>
+      prevIndex === flashCardArr.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const isFirstCard = currentCardIndex === 0;
+  const isLastCard = currentCardIndex === flashCardArr.length - 1;
+
   return (
     <div>
       <h1>{flashCardSet.subject}</h1>
       <Link to={`/flashcards/${flashCardSet._id}/update`}>Edit</Link>
       <button onClick={handleDelete}>Delete Flash Card Set</button>
+
+      <FlashCardNav
+        isFirstCard={isFirstCard}
+        isLastCard={isLastCard}
+        handlePreviousCard={handlePreviousCard}
+        handleNextCard={handleNextCard}
+      />
+
       {flashCardArr && flashCardArr.length > 0 ? (
-        flashCardArr.map((flashCard) => (
-          <div key={flashCard._id}>
-            <FlashCard flashCard={flashCard} />
-          </div>
-        ))
+        <div key={flashCardArr[currentCardIndex]._id}>
+          <FlashCard flashCard={flashCardArr[currentCardIndex]} />
+        </div>
       ) : (
         <p>No flash cards available in this set.</p>
       )}
