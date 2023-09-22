@@ -28,6 +28,14 @@ function UpdateFlashCardSetForm() {
     }
   }
 
+  const handleDelete = async () => {
+    try {
+      await flashCardsApi.deleteCard(id);
+    } catch (err) {
+      console.error('Error deleting flash card set:', err);
+    }
+  };
+
   useEffect(() => {
     async function getFlashCardSet() {
       try {
@@ -49,6 +57,8 @@ function UpdateFlashCardSetForm() {
         <input type="text" value={flashCardSet.subject} onChange={handleChange} />
         <input type="submit" value="Update Subject" />
       </form>
+
+      <button onClick={handleDelete}>Delete Flash Card Set</button>
     </div>
   );
 }
