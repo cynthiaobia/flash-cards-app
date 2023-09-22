@@ -37,10 +37,11 @@ function FlashCardSet() {
       <h1>{flashCardSet.subject}</h1>
       <Link to={`/flashcards/${flashCardSet._id}/update`}>Edit</Link>
       <button onClick={handleDelete}>Delete Flash Card Set</button>
-      <FlashCard />
       {flashCardArr && flashCardArr.length > 0 ? (
         flashCardArr.map((flashCard) => (
-          <h2 key={flashCard._id}>{flashCard.question}</h2>
+          <div key={flashCard._id}>
+            <FlashCard flashCard={flashCard} />
+          </div>
         ))
       ) : (
         <p>No flash cards available in this set.</p>
