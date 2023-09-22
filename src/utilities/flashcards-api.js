@@ -6,3 +6,13 @@ const BASE_URL = '/api/flashcards';
 export function addFlashCardSet(data) {
   return sendRequest(BASE_URL, 'POST', data);
 }
+
+// get all flash card sets
+export function getAll() {
+  return sendRequest(BASE_URL);
+}
+
+// get flash card set by id
+export function getById(id) {
+  return sendRequest(`${BASE_URL}/${id}`);
+}

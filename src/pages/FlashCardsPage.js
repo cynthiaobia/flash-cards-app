@@ -1,6 +1,6 @@
 
 import * as usersService from '../utilities/users-service';
-import FlashCardSets from '../components/FlashCardSets/FlashCardSets';
+import AllFlashCardSets from '../components/AllFlashCardSets/AllFlashCardSets';
 
 function FlashCardsPage() {
 
@@ -11,7 +11,7 @@ function FlashCardsPage() {
 
   return (
     <div>
-      <FlashCardSets />
+      <AllFlashCardSets />
 
       {/* <button onClick={handleCheckToken}>
         Check When My Login Expires
