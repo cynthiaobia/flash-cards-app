@@ -23,3 +23,8 @@ export function getById(id) {
 export function updateCard(data, id) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
 }
+
+// delete a flash card set by id
+export function deleteCard(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
