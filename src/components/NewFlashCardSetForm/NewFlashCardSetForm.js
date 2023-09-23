@@ -19,7 +19,7 @@ function NewFlashCardSetForm({ user, setUser }) {
       console.log('Flash card set created:', newFlashCardSet);
 
       // clear input
-      setSubject('');
+      // setSubject('');
     } catch (err) {
       console.error('Error creating flash card set:', err);
     }

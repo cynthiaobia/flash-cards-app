@@ -8,7 +8,6 @@ import NavBar from './components/NavBar';
 import { getUser } from './utilities/users-service';
 import FlashCardSet from '../src/components/FlashCardSet/FlashCardSet';
 import UpdateFlashCardSetForm from './components/UpdateFlashCardSetForm/UpdateFlashCardSetForm';
-import NewFlashCardForm from './components/NewFlashCardForm';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -21,8 +20,7 @@ function App() {
           <NavBar user={user} setUser={setUser}/>
           <Routes>
             <Route path="/flashcards/new" element={<NewFlashCardSetPage />} />
-            <Route path="/flashcards/update/:id" element={<UpdateFlashCardSetForm />} />
-            <Route path="/flashcards/new/:id" element={<NewFlashCardForm />} />
+            <Route path="/flashcards/:id/update" element={<UpdateFlashCardSetForm />} />
             <Route path="/flashcards" element={<FlashCardsPage />} />
             <Route path="/flashcards/:id" element={<FlashCardSet />} />
             

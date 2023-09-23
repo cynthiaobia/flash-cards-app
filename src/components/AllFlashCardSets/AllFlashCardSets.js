@@ -22,7 +22,7 @@ function AllFlashCardSets () {
 
   return (
     <div>
-      <h1>Flash Card Sets</h1>
+      <h1>All Flash Card Sets</h1>
 
       <nav>
       {flashCards.map(
@@ -31,15 +31,22 @@ function AllFlashCardSets () {
           <Link id={flashCard._id} to={`/flashcards/${flashCard._id}`}>
             {flashCard.subject}
           </Link>
-          <br />
-          <Link to={`/flashcards/update/${flashCard._id}`}>Edit Set</Link>
-          <br /><br />
+          {/* <Link id={flashCard._id} to={`/flashcards/update`}>
+            Edit
+          </Link> */}
         </div>
+          
+          
       )}
-      </nav>
+    </nav>
 
-      <br />
-      <Link to="/flashcards/new">Add a New Flash Card Set</Link>
+      {/* {flashCards.map(
+        (flashCard, i) =>
+        <div key={flashCard._id}>
+          <FlashCardSet id={flashCard._id} flashCardSet={flashCard} />
+          <a href={`/flashcards/${flashCard._id}`}>{flashCard.subject}</a>
+        </div>
+      )} */}
 
     </div>
   )
