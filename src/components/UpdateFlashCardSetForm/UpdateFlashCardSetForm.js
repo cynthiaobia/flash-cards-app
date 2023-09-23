@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as flashCardsApi from '../../utilities/flashcards-api';
+import { Link } from 'react-router-dom';
 
 function UpdateFlashCardSetForm() {
   const { id } = useParams();
@@ -58,6 +59,10 @@ function UpdateFlashCardSetForm() {
         <input type="submit" value="Update Subject" />
       </form>
 
+      <Link to={`/flashcards/${id}/new`}>
+        <button>Add Card</button>
+      </Link>
+      
       <button onClick={handleDelete}>Delete Flash Card Set</button>
     </div>
   );
