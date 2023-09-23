@@ -1,7 +1,6 @@
 import * as flashCardsApi from '../../utilities/flashcards-api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import FlashCard from './FlashCard';
 import FlashCardNav from './FlashCardNav';
 
@@ -62,9 +61,6 @@ function FlashCardSet() {
       ) : (
         <p>No flash cards available in this set.</p>
       )}
-
-      <Link to={`/flashcards/${flashCardSet._id}/update`}>Edit Set</Link>
-      
 
     </div>
   );

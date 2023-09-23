@@ -31,9 +31,12 @@ function AllFlashCardSets () {
           <Link id={flashCard._id} to={`/flashcards/${flashCard._id}`}>
             {flashCard.subject}
           </Link>
-          {/* <Link id={flashCard._id} to={`/flashcards/update`}>
+          <br />
+          <Link id={flashCard._id} to={`/flashcards/${flashCard._id}/update`}>
             Edit
-          </Link> */}
+          </Link>
+          <br />
+          <br />
         </div>
           
           
