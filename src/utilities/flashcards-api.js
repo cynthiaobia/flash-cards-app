@@ -20,6 +20,7 @@ export function getById(id) {
 }
 
 // update card by id
+// used in update flash card set form
 export function updateCard(data, id) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
 }
@@ -27,4 +28,10 @@ export function updateCard(data, id) {
 // delete a flash card set by id
 export function deleteCard(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+
+// create and add flash card to set
+/// working on this!!!
+export function addCard(data, id){
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
 }

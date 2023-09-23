@@ -1,7 +1,11 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import * as flashCardsApi from '../utilities/flashcards-api';
 
 function NewFlashCardForm() {
+
+  const {id} = useParams();
 
   const [flashCard, setFlashCard] = useState({
     question: '',
@@ -15,13 +19,27 @@ function NewFlashCardForm() {
     })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // this code is testing to make sure state is updated and logged to console in browser
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const newFlashCard = {...flashCard};
-    setFlashCard(newFlashCard);
+  //   const newFlashCard = {...flashCard};
+  //   setFlashCard(newFlashCard);
 
-    console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
+  //   console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
+  // }
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      const newFlashCard = {...flashCard};
+      setFlashCard(newFlashCard);
+    try {
+      await flashCardsApi.addCard(newFlashCard, id);
+
+      console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
