@@ -7,6 +7,14 @@ const BASE_URL = '/api/flashcards';
 export function addFlashCardSet(data) {
   return sendRequest(BASE_URL, 'POST', data);
 }
+// // add single flash card to existing flash card set
+// export function addFlashCardToSet(data, id) {
+//   return sendRequest(BASE_URL, 'POST', data)
+// }
+
+export function addCard(data, id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
+}
 
 // get all flash card sets
 export function getAll() {
@@ -19,7 +27,7 @@ export function getById(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'GET');
 }
 
-// update card by id
+// update flash card set by id
 export function updateCard(data, id) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
 }

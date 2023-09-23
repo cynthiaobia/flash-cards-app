@@ -63,7 +63,7 @@ function FlashCardSet() {
         <p>No flash cards available in this set.</p>
       )}
 
-      <Link to={`/flashcards/${flashCardSet._id}/update`}>Edit Set</Link>
+      {/* <Link to={`/flashcards/${flashCardSet._id}/update`}>Edit Set</Link> */}
       
 
     </div>

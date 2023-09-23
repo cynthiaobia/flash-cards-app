@@ -1,15 +1,17 @@
 
 function FlashCard (props) {
-  const {question, answer, isCorrect} = props.flashCard;
+  const {flashCard} = props;
 
   return(
     <div>
-      <h2>{question}</h2>
-      <h3>{answer}</h3>
+      <h2>{flashCard.question}</h2>
+      <h3>{flashCard.answer}</h3>
       <h4>
         Mark as correct: 
-        {isCorrect ? <b>Yes</b> : <b>No</b>}
+        {flashCard.isCorrect ? <b>Yes</b> : <b>No</b>}
       </h4>
+
+      <button>Edit Card</button>
     </div>
   )
 }
