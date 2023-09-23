@@ -17,7 +17,9 @@ router.put('/:id', flashCardSetsCtrl.update);
 
 // PUT create and add card to set
 /// working on this!!!
-router.put('/:id', flashCardSetsCtrl.addCard);
+// router.put('/:id', flashCardSetsCtrl.addCard);
+router.put('/flashcards/new/:id', flashCardSetsCtrl.addCard);
+
 /**
  * Delete
  */
