@@ -34,7 +34,7 @@ function NewFlashCardForm() {
       const newFlashCard = {...flashCard};
       setFlashCard(newFlashCard);
     try {
-      await flashCardsApi.addCard(flashCard, id);
+      await flashCardsApi.addCard(newFlashCard, id);
 
       console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
     } catch (err) {

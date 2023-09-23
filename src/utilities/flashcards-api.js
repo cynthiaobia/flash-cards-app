@@ -32,9 +32,6 @@ export function deleteCard(id) {
 
 // create and add flash card to set
 /// working on this!!!
-// export function addCard(data, id){
-//   return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
-// }
-export function addCard(data, id) {
+export function addCard(data, id){
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
 }
