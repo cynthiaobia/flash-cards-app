@@ -38,10 +38,10 @@ function AllFlashCardSets () {
           <br />
           <br />
         </div>
-          
-          
       )}
     </nav>
+
+    <Link to="/flashcards/new">Create New Flash Card Set</Link>
 
       {/* {flashCards.map(
         (flashCard, i) =>
