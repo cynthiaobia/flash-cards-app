@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import * as flashCardsApi from '../utilities/flashcards-api';
 
 function NewFlashCardForm() {
@@ -44,7 +44,7 @@ function NewFlashCardForm() {
 
   return (
     <div>
-      <h1>Create a Flash Card</h1>
+      <h1>Add Flash Card to SUBJECT HERE</h1>
 
       <form onSubmit={handleSubmit}>
 
@@ -74,6 +74,9 @@ function NewFlashCardForm() {
         <input type="submit" value="Add Card" />
 
       </form>
+      <Link to={`/flashcards/${id}`}>
+        <button>Cancel</button>
+      </Link>
     </div>
   )
 }

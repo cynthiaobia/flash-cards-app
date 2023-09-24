@@ -1,6 +1,6 @@
 import * as flashCardsApi from '../../utilities/flashcards-api';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import FlashCard from './FlashCard';
 import FlashCardNav from './FlashCardNav';
 
@@ -47,20 +47,31 @@ function FlashCardSet() {
     <div>
       <h1>{flashCardSet.subject}</h1>
 
-      <FlashCardNav
+      {flashCardArr && flashCardArr.length > 0 ? (
+        
+        <div key={flashCardArr[currentCardIndex]._id}>
+          <FlashCard flashCard={flashCardArr[currentCardIndex]} />
+          <FlashCardNav
         isFirstCard={isFirstCard}
         isLastCard={isLastCard}
         handlePreviousCard={handlePreviousCard}
         handleNextCard={handleNextCard}
       />
-
-      {flashCardArr && flashCardArr.length > 0 ? (
-        <div key={flashCardArr[currentCardIndex]._id}>
-          <FlashCard flashCard={flashCardArr[currentCardIndex]} />
         </div>
       ) : (
-        <p>No flash cards available in this set.</p>
+        <div>
+          <p>No flash cards available in this set.</p>
+
+          <Link to={`/flashcards/${id}/new`}>
+            <button>Add Card</button>
+          </Link>
+          
+      </div>
+        
+        
       )}
+
+      <Link to="/flashcards">Back to all Flash Cards</Link>
 
     </div>
   );

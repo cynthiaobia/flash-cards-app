@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import * as flashCardsApi from '../../utilities/flashcards-api';
-import { Link } from 'react-router-dom';
 
 function UpdateFlashCardSetForm() {
   const { id } = useParams();
   const [flashCardSet, setFlashCardSet] = useState({ subject: '' });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFlashCardSet(
@@ -20,10 +20,9 @@ function UpdateFlashCardSetForm() {
     e.preventDefault();
 
     try {
-      // Send a PUT request to update the flash card set
       await flashCardsApi.updateCard({ subject: flashCardSet.subject }, id);
-      // Optionally, you can redirect or display a success message here
       console.log(flashCardSet);
+      navigate("/flashcards");
     } catch (err) {
       console.error(err);
     }
@@ -32,6 +31,8 @@ function UpdateFlashCardSetForm() {
   const handleDelete = async () => {
     try {
       await flashCardsApi.deleteCard(id);
+      console.log('deleted successfully')
+      navigate("/flashcards");
     } catch (err) {
       console.error('Error deleting flash card set:', err);
     }
@@ -52,18 +53,44 @@ function UpdateFlashCardSetForm() {
 
   return (
     <div>
-      <h1>Update Flash Card Set</h1>
+      <h1>Edit {flashCardSet.subject} Flash Cards</h1>
+
+      {/* form to edit subject */}
       <form onSubmit={handleSubmit}>
         <label>Subject</label>
         <input type="text" value={flashCardSet.subject} onChange={handleChange} />
         <input type="submit" value="Update Subject" />
       </form>
 
+      
+
       <Link to={`/flashcards/${id}/new`}>
         <button>Add Card</button>
       </Link>
       
       <button onClick={handleDelete}>Delete Flash Card Set</button>
+
+      {/* change to a button later for styling */}
+      <Link to="/flashcards">
+        <button>
+          Cancel
+        </button>
+      </Link>
+
+      {/* list all cards in set */}
+      {
+        (flashCardSet.flashCards) ? (
+        flashCardSet.flashCards.map(
+          (flashcard) => (
+            <div key={flashcard._id}>
+              <p><b>{flashcard.question}</b></p>
+               <p><i>{flashcard.answer}</i></p>
+            </div>
+          )
+        )) :
+        <p></p>
+      }
+
     </div>
   );
 }

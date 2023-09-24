@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import * as flashCardsAPI from '../../utilities/flashcards-api';
+import { Link, useNavigate } from 'react-router-dom';
 
 function NewFlashCardSetForm({ user, setUser }) {
+  const navigate = useNavigate();
+
   const [subject, setSubject] = useState('');
 
   const handleChange = (e) => {
@@ -19,7 +22,9 @@ function NewFlashCardSetForm({ user, setUser }) {
       console.log('Flash card set created:', newFlashCardSet);
 
       // clear input
-      // setSubject('');
+      setSubject('');
+      // later navigate to add cards
+      navigate('/flashcards')
     } catch (err) {
       console.error('Error creating flash card set:', err);
     }
@@ -44,6 +49,12 @@ function NewFlashCardSetForm({ user, setUser }) {
 
         <input type='submit' value='Create Set' />
       </form>
+
+      <Link to="/flashcards">
+        <button>
+          Cancel
+        </button>
+      </Link>
     </div>
   );
 }
