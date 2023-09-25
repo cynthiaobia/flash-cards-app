@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import {updateUserInfo} from '../utilities/users-api';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function UpdateInfoForm ({user, setUser}) {
 
@@ -45,11 +45,13 @@ function UpdateInfoForm ({user, setUser}) {
       <form autoComplete='off' onSubmit={handleSubmit}>
           <label>Name</label>
           <input type='text' name='name' value={formData.name} onChange={handleChange} required />
-
+          <br /><br />
           <label>Email</label>
           <input type='email' name='email' value={formData.email} onChange={handleChange} required />
-      
+          <br />
           <button type="submit">Submit</button>
+          <br />
+          <Link to="/settings">Back to Settings</Link>
       </form>
       
 

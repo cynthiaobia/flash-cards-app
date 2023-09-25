@@ -1,5 +1,5 @@
 /* CSS Custom Properties */
-:root {
+/* :root {
   --white: #FFFFFF;
   --tan-1: #f6fbfb;
   --tan-2: #dde3e7;
@@ -8,13 +8,13 @@
   --blue: #007Ff7;
   --text-light: #968c84;
   --text-dark: #615954;
-}
+} */
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,7 +24,7 @@ body {
   background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -35,7 +35,7 @@ code {
   height: 100%;
 }
 
-.align-ctr {
+/* .align-ctr {
   text-align: center;
 }
 
@@ -109,7 +109,7 @@ input {
   border: .1vmin solid var(--tan-3);
   border-radius: .5vmin;
   color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
+  background-image: none !important; 
   outline: none;
 }
 
@@ -150,7 +150,7 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} */
 
 /* Other CSS */
 
@@ -168,6 +168,70 @@ button[type="submit"] {
   text-decoration: none;
   padding: 0 25px 0 25px;
 }
+
+
+/* Form Styles */
+form {
+  background-color: #FFFFFF; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #333; /* Dark gray text color */
+}
+
+label {
+  font-size: 18px; /* Adjust label font size */
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  padding: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px; /* Adjust input font size */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px;
+  color: #333; /* Dark gray text color */
+  background-color: #f6f6f6; /* Light gray background */
+  margin: 10px;
+}
+
+input:focus {
+  border-color: #007Ff7; /* Highlight border color on focus */
+}
+
+/* Button Styles */
+button, a.button {
+  padding: 10px 20px; /* Adjust button padding */
+  margin: 10px;
+  font-size: 16px; /* Adjust button font size */
+  font-weight: bold;
+  background-color: #007Ff7; /* Blue button background color */
+  color: #FFFFFF; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, a.button:hover {
+  background-color: #005ea6; /* Darker blue on hover */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #b9b5b5;
+  padding: 2vmin;
+  height: 100vh;
+  color: #333; /* Dark gray text color */
+}
+
+
 
 .flash-cards-container {
   display: flex;
@@ -272,3 +336,9 @@ h4 {
 h4 b {
   font-weight: bold;
 }
+
+.card-info-bg:nth-child(even) {
+  background-color: rgb(225, 235, 240); /* Background color for even-numbered elements */
+  padding: 5px;
+}
+

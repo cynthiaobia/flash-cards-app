@@ -46,7 +46,7 @@ function NewFlashCardSetForm({ user, setUser }) {
           onChange={handleChange}
           required
         />
-
+        <br />
         <input type='submit' value='Create Set' />
       </form>
 

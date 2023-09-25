@@ -82,9 +82,14 @@ function UpdateFlashCardSetForm() {
         (flashCardSet.flashCards) ? (
         flashCardSet.flashCards.map(
           (flashcard) => (
-            <div key={flashcard._id}>
+            <div key={flashcard._id} className='card-info-bg'>
               <p><b>{flashcard.question}</b></p>
                <p><i>{flashcard.answer}</i></p>
+               <p>
+                <Link to="">
+                  Edit Card
+                </Link>
+               </p>
             </div>
           )
         )) :
