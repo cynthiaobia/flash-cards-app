@@ -25,22 +25,22 @@ function AllFlashCardSets () {
     <div>
       <h1>All Flash Card Sets</h1>
 
-      <nav>
+      <div className="flash-cards-container">
       {flashCards.map(
         flashCard =>
-        <div key={flashCard._id}>
+        <div key={flashCard._id} className='flash-card-set'>
           <Link id={flashCard._id} to={`/flashcards/${flashCard._id}`}>
             {flashCard.subject}
           </Link>
           <br />
-          <Link id={flashCard._id} to={`/flashcards/${flashCard._id}/update`}>
+          {/* <Link id={flashCard._id} to={`/flashcards/${flashCard._id}/update`}>
             Edit
-          </Link>
+          </Link> */}
           <br />
           <br />
         </div>
       )}
-    </nav>
+    </div>
 
     <Link to="/flashcards/new">Create New Flash Card Set</Link>
 

@@ -71,7 +71,7 @@ function UpdateFlashCardSetForm() {
       <button onClick={handleDelete}>Delete Flash Card Set</button>
 
       {/* change to a button later for styling */}
-      <Link to="/flashcards">
+      <Link to={`/flashcards/${id}`}>
         <button>
           Cancel
         </button>

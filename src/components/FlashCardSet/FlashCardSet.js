@@ -70,7 +70,10 @@ function FlashCardSet() {
         
         
       )}
-
+      <Link id={id} to={`/flashcards/${id}/update`}>
+        Edit Set
+      </Link>
+      <br />
       <Link to="/flashcards">Back to all Flash Cards</Link>
 
     </div>
