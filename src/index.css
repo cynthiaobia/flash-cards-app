@@ -188,26 +188,26 @@ label {
 
 input {
   padding: 10px;
-  font-size: 16px; /* Adjust input font size */
-  border: 1px solid #ddd; /* Light gray border */
+  font-size: 16px; 
+  border: 1px solid #ddd; 
   border-radius: 5px;
-  color: #333; /* Dark gray text color */
-  background-color: #f6f6f6; /* Light gray background */
+  color: #333; 
+  background-color: #f6f6f6; 
   margin: 10px;
 }
 
 input:focus {
-  border-color: #007Ff7; /* Highlight border color on focus */
+  border-color: #007Ff7; 
 }
 
 /* Button Styles */
 button, a.button {
-  padding: 10px 20px; /* Adjust button padding */
+  padding: 10px 20px; 
   margin: 10px;
-  font-size: 16px; /* Adjust button font size */
+  font-size: 16px; 
   font-weight: bold;
-  background-color: #007Ff7; /* Blue button background color */
-  color: #FFFFFF; /* White text color */
+  background-color: #007Ff7; 
+  color: #FFFFFF; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -215,7 +215,7 @@ button, a.button {
 }
 
 button:hover, a.button:hover {
-  background-color: #005ea6; /* Darker blue on hover */
+  background-color: #005ea6; 
 }
 
 body {
@@ -228,7 +228,7 @@ body {
   background-color: #b9b5b5;
   padding: 2vmin;
   height: 100vh;
-  color: #333; /* Dark gray text color */
+  color: #333; 
 }
 
 
@@ -279,7 +279,7 @@ body {
   padding: 20px; 
   background: white;
   border-radius: 10px; 
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
 }
 
 
