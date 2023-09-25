@@ -63,12 +63,17 @@ async function remove(req, res) {
 
 /// working on this!
 async function addCard(req, res) {
+  console.log(req.body)
   const {id} = req.params;
   try {
     const flashCardSet = await FlashCardSet.findById(id);
+    console.log(flashCardSet);
     flashCardSet.flashCards.push(req.body);
-    const updatedFlashCardSet = await FlashCardSet.findByIdAndUpdate(id, flashCardSet, {new: true});
-    res.status(200).json(updatedFlashCardSet);
+    // await flashCardSet.save();
+    console.log(flashCardSet);
+    // const updatedFlashCardSet = await FlashCardSet.findByIdAndUpdate(id, flashCardSet, {new: true});
+    res.status(200).json(flashCardSet);
+    // console.log(updatedFlashCardSet)
   } catch (err) {
     console.log(err);
   }

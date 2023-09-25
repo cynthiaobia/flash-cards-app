@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigte} from "react-router-dom";
 import * as flashCardsApi from '../utilities/flashcards-api';
 
 function NewFlashCardForm() {
 
   const {id} = useParams();
+  // const navigate = useNavigate();
 
   const [flashCard, setFlashCard] = useState({
     question: '',
@@ -36,11 +37,26 @@ function NewFlashCardForm() {
     try {
       await flashCardsApi.addCard(newFlashCard, id);
 
-      console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
+      // console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
+      // navigate(`/flashcards/${id}`)
+
     } catch (err) {
       console.log(err);
     }
   }
+
+  // useEffect(() => {
+  //   async function getFlashCard() {
+  //     try {
+  //       const fetchedFlashCard = await flashCardsApi.getById(id);
+  //       setFlashCard(fetchedFlashCard);
+  //     } catch (err) {
+  //       console.error('Error fetching flash card set:', err);
+  //     }
+  //   }
+
+  //   getFlashCard();
+  // }, [id]);
 
   return (
     <div>
