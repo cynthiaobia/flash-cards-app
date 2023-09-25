@@ -31,6 +31,7 @@ function UpdateInfoForm ({user, setUser}) {
     try {
       await updateUserInfo(formData); 
       console.log('User information updated');
+      setUser(formData);
       navigate('/settings');
     } catch (err) {
       console.error('Error updating user information:', err);
