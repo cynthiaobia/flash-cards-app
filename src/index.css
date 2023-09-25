@@ -151,3 +151,27 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+/* Other CSS */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  font-size: 2em;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0 25px 0 25px;
+}
+
+.flash-card-set {
+  background: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}

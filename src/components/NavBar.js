@@ -10,15 +10,24 @@ function NavBar({user, setUser}) {
   }
 
   return(
-    <nav>
+    <div>
+
+      <div className='nav'>
+        <div className='nav-left'>
+          <Link to="/">Home</Link>
+          <Link to="/flashcards">Flash Cards</Link>
+        </div>
+
+        <div className='nav-right'>
+          <Link to="/settings">Settings</Link>
+          {/* <Link to="" onClick={handleLogout}>Log Out</Link> */}
+        </div>
+      </div>
+
       <h2>Welcome, {user.name}</h2>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/flashcards">All Flash Cards</Link></li>
-        <li><Link to="/settings">Settings</Link></li>
-        <li><Link to="" onClick={handleLogout}>Log Out</Link></li>
-      </ul>
-    </nav>
+    </div>
+    
+    
   )
 }
 
