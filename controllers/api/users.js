@@ -41,6 +41,24 @@ async function checkToken(req, res) {
   res.json(req.exp);
 }
 
+async function updateUserInfo(req, res) {
+  try {
+    // Find the user by ID and update their information
+    const updatedUser = await User.findByIdAndUpdate(
+      req.user._id, // Assuming you have user data in req.user
+      req.body, // Data to update (e.g., { name: req.body.name, email: req.body.email })
+      { new: true }
+    );
+
+    // Send the updated user object as a response
+    res.json(updatedUser);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+}
+
+
 
 // helper fxn to create a jwt token
 
@@ -51,5 +69,6 @@ function createJWT(user) {
 module.exports = {
   create, 
   login,
-  checkToken
+  checkToken,
+  updateUserInfo
 }

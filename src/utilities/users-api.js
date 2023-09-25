@@ -39,3 +39,7 @@ async function sendRequest(url, method = 'GET', payload = null) {
   if (res.ok) return res.json();
   throw new Error('Bad Request');
 }
+
+export function updateUserInfo(data) {
+  return sendRequest(`${BASE_URL}/update`, 'PUT', data);
+}

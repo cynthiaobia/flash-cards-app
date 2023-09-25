@@ -10,6 +10,7 @@ import FlashCardSet from '../src/components/FlashCardSet/FlashCardSet';
 import UpdateFlashCardSetForm from './components/UpdateFlashCardSetForm/UpdateFlashCardSetForm';
 import NewFlashCardForm from './components/NewFlashCardForm';
 import SettingsPage from './pages/SettingsPage';
+import UpdateInfoForm from './components/UpdateInfoForm';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -26,7 +27,8 @@ function App() {
             <Route path="/flashcards/:id/new" element={<NewFlashCardForm />} />
             <Route path="/flashcards" element={<FlashCardsPage />} />
             <Route path="/flashcards/:id" element={<FlashCardSet />} />
-            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/settings" element={<SettingsPage user={user} setUser={setUser}/>} />
+            <Route path="/settings/update" element={<UpdateInfoForm user={user} setUser={setUser}/>} />
             
           </Routes>
         </>

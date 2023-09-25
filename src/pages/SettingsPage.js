@@ -8,10 +8,31 @@ function SettingsPage({user, setUser}) {
     setUser(null);
   }
 
+  console.log(user)
+
   return (
     <div>
       <h1>Settings</h1>
-      <Link to="" onClick={handleLogout}>Log Out</Link>
+      <ul>
+        <li>
+          <b>Name </b>
+          {user.name}
+        </li>
+
+        <li>
+          <b>Email </b>
+          {user.email}
+        </li>
+
+        <li>
+          <Link to="/settings/update">Edit Information</Link>
+        </li>
+
+        <li>
+          <Link to="" onClick={handleLogout}>Log Out</Link>
+        </li>
+      </ul>
+      
     </div>
   )
 }
