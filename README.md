@@ -11,6 +11,16 @@ The Flash Card App is a web application designed to help users create, manage, a
 ![Flash Card App Screenshot](img/flash-cards-04.png)
 ![Flash Card App Screenshot](img/flash-cards-05.png)
 
++----------------+     +---------------------+     +----------------+
+|     Users      |     |    FlashCardSets    |     |   FlashCards   |
++----------------+     +---------------------+     +----------------+
+| - UserID       |     | - SetID             |     | - CardID        |
+| - Username     |     | - Subject           |     | - Question      |
+| - Email        |     |                     |     | - Answer        |
+|                |     | - UserID (FK)       |     | - SetID (FK)    |
++----------------+     +---------------------+     +----------------+
+
+
 ## Technologies Used
 
 The Flash Card App is built using the following technologies:
