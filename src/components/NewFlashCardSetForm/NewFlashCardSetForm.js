@@ -24,7 +24,7 @@ function NewFlashCardSetForm({ user, setUser }) {
       // clear input
       setSubject('');
       // later navigate to add cards
-      navigate('/flashcards')
+      navigate(`/flashcards/${newFlashCardSet._id}`)
     } catch (err) {
       console.error('Error creating flash card set:', err);
     }
