@@ -4,7 +4,12 @@
 
 The Flash Card App is a web application designed to help users create, manage, and study flashcards. It provides an intuitive interface for creating flashcards, organizing them into sets by subject, and flipping through them to reinforce learning. Whether you're a student preparing for exams or simply looking to memorize important information, the Flash Card App has you covered.
 
-![Flash Card App Screenshot](screenshot.png)
+## Screenshots
+![Flash Card App Screenshot](img/flash-cards-01.png)
+![Flash Card App Screenshot](img/flash-cards-02.png)
+![Flash Card App Screenshot](img/flash-cards-03.png)
+![Flash Card App Screenshot](img/flash-cards-04.png)
+![Flash Card App Screenshot](img/flash-cards-05.png)
 
 ## Technologies Used
 
