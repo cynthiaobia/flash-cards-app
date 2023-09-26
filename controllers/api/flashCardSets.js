@@ -79,11 +79,35 @@ async function addCard(req, res) {
   }
 }
 
+
+// Delete a specific flash card from the set
+async function removeFlashCard(req, res) {
+  try {
+    const flashCardSet = await FlashCardSet.findById(req.params.setId);
+
+    const flashCard = flashCardSet.flashCards.id(req.params.cardId);
+
+    flashCard.remove();
+    await flashCardSet.save();
+
+    return res.json({ message: 'Flash card deleted successfully' });
+  } catch (err) {
+    return res.status(500).json({ err: 'Internal server error' });
+  }
+}
+
+module.exports = {
+  // ...
+  removeFlashCard,
+};
+
+
 module.exports = {
   create,
   show,
   index,
   update,
   remove,
-  addCard
+  addCard,
+  removeFlashCard
 }
