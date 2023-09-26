@@ -13,25 +13,35 @@ function SettingsPage({user, setUser}) {
   return (
     <div>
       <h1>Settings</h1>
-      <ul>
-        <li>
-          <b>Name </b>
-          {user.name}
-        </li>
+      
+      <div>
+      <b>Name </b>
+      {user.name}
+      </div>
 
-        <li>
-          <b>Email </b>
-          {user.email}
-        </li>
+      <div>
+      <b>Email </b>
+      {user.email}
+      </div>
 
-        <li>
-          <Link to="/settings/update">Edit Information</Link>
-        </li>
+      <div>
+      <Link to="/settings/update">
+        <button>
+          Edit Info
+        </button>
+      </Link>
+      </div>
 
-        <li>
-          <Link to="" onClick={handleLogout}>Log Out</Link>
-        </li>
-      </ul>
+      <div>
+      <Link to="" onClick={handleLogout}>Log Out</Link>
+      </div>
+      
+
+      
+
+      
+
+      
       
     </div>
   )

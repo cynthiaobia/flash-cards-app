@@ -92,6 +92,7 @@ function UpdateFlashCardSetForm() {
                 <Link to="">
                   Edit Card
                 </Link>
+                  &nbsp; | &nbsp;
                 <Link to="">
                   Delete Card
                 </Link>
