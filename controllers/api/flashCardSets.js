@@ -50,11 +50,9 @@ async function update(req, res) {
 }
 
 async function remove(req, res) {
+  const {id} = req.params;
   try {
-    await FlashCardSet.findByIdAndDelete(
-      req.params.id
-      // req.body 
-    )
+    await FlashCardSet.findByIdAndDelete(id)
     console.log('Deletion successful');
   } catch (err) {
     console.log(err);

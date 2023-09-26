@@ -31,9 +31,10 @@ function UpdateFlashCardSetForm() {
 
   const handleDelete = async () => {
     try {
+
+      navigate("/flashcards"); // moved this for now because it's not working after await
       await flashCardsApi.deleteCardSet(id);
-      console.log('deleted successfully')
-      navigate("/flashcards");
+      console.log('deleted successfully');
     } catch (err) {
       console.error('Error deleting flash card set:', err);
     }
@@ -101,6 +102,7 @@ function UpdateFlashCardSetForm() {
         <p></p>
       }
 
+      <br />
       <Link to={`/flashcards/${id}`}>
         Back to {subject} Flash Cards
       </Link>
