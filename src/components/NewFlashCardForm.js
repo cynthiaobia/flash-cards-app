@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate} from "react-router-dom";
 import * as flashCardsApi from '../utilities/flashcards-api';
 
@@ -7,6 +7,20 @@ function NewFlashCardForm() {
 
   const {id} = useParams();
   const navigate = useNavigate();
+
+  const [flashCardSet, setFlashCardSet] = useState({ subject: '', flashCards: [] });
+
+  useEffect(() => {
+    async function getFlashCardSet() {
+      try {
+        const fetchedFlashCardSet = await flashCardsApi.getById(id);
+        setFlashCardSet(fetchedFlashCardSet);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getFlashCardSet();
+  }, [id]);
 
   const [flashCard, setFlashCard] = useState({
     question: '',
@@ -45,21 +59,21 @@ function NewFlashCardForm() {
   }
 
   // useEffect(() => {
-  //   async function getFlashCard() {
+  //   async function getFlashCardSet() {
   //     try {
-  //       const fetchedFlashCard = await flashCardsApi.getById(id);
-  //       setFlashCard(fetchedFlashCard);
+  //       const fetchedFlashCardSet = await flashCardsApi.getById(id);
+  //       setFlashCardSet(fetchedFlashCardSet);
   //     } catch (err) {
   //       console.error('Error fetching flash card set:', err);
   //     }
   //   }
 
-  //   getFlashCard();
+  //   getFlashCardSet();
   // }, [id]);
 
   return (
     <div>
-      <h1>Add Flash Card to</h1>
+      <h1>Add Flash Card to {flashCardSet.subject}</h1>
 
       <form onSubmit={handleSubmit}>
 
