@@ -26,7 +26,7 @@ export function updateCard(data, id) {
 }
 
 // delete a flash card set by id
-export function deleteCard(id) {
+export function deleteCardSet(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 

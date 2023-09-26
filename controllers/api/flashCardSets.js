@@ -69,7 +69,7 @@ async function addCard(req, res) {
     const flashCardSet = await FlashCardSet.findById(id);
     console.log(flashCardSet);
     flashCardSet.flashCards.push(req.body);
-    // await flashCardSet.save();
+    await flashCardSet.save();
     console.log(flashCardSet);
     // const updatedFlashCardSet = await FlashCardSet.findByIdAndUpdate(id, flashCardSet, {new: true});
     res.status(200).json(flashCardSet);

@@ -1,12 +1,12 @@
 
-import { useState, useEffect } from "react";
-import { useParams, Link, useNavigte} from "react-router-dom";
+import { useState } from "react";
+import { useParams, Link, useNavigate} from "react-router-dom";
 import * as flashCardsApi from '../utilities/flashcards-api';
 
 function NewFlashCardForm() {
 
   const {id} = useParams();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [flashCard, setFlashCard] = useState({
     question: '',
@@ -37,8 +37,7 @@ function NewFlashCardForm() {
     try {
       await flashCardsApi.addCard(newFlashCard, id);
 
-      // console.log('flash card: ', flashCard, 'New flash card: ', newFlashCard);
-      // navigate(`/flashcards/${id}`)
+      navigate(`/flashcards/${id}/update`);
 
     } catch (err) {
       console.log(err);
@@ -60,7 +59,7 @@ function NewFlashCardForm() {
 
   return (
     <div>
-      <h1>Add Flash Card to SUBJECT HERE</h1>
+      <h1>Add Flash Card to</h1>
 
       <form onSubmit={handleSubmit}>
 
@@ -90,7 +89,7 @@ function NewFlashCardForm() {
         <input type="submit" value="Add Card" />
 
       </form>
-      <Link to={`/flashcards/${id}`}>
+      <Link to={`/flashcards/${id}/update`}>
         <button>Cancel</button>
       </Link>
     </div>

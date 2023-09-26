@@ -5,6 +5,7 @@ import * as flashCardsApi from '../../utilities/flashcards-api';
 function UpdateFlashCardSetForm() {
   const { id } = useParams();
   const [flashCardSet, setFlashCardSet] = useState({ subject: '' });
+  const [subject, setSubject] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -30,7 +31,7 @@ function UpdateFlashCardSetForm() {
 
   const handleDelete = async () => {
     try {
-      await flashCardsApi.deleteCard(id);
+      await flashCardsApi.deleteCardSet(id);
       console.log('deleted successfully')
       navigate("/flashcards");
     } catch (err) {
@@ -43,6 +44,7 @@ function UpdateFlashCardSetForm() {
       try {
         const fetchedFlashCardSet = await flashCardsApi.getById(id);
         setFlashCardSet(fetchedFlashCardSet);
+        setSubject(fetchedFlashCardSet.subject)
       } catch (err) {
         console.error('Error fetching flash card set:', err);
       }
@@ -53,7 +55,7 @@ function UpdateFlashCardSetForm() {
 
   return (
     <div>
-      <h1>Edit {flashCardSet.subject} Flash Cards</h1>
+      <h1>Edit {subject} Flash Cards</h1>
 
       {/* form to edit subject */}
       <form onSubmit={handleSubmit}>
@@ -89,12 +91,19 @@ function UpdateFlashCardSetForm() {
                 <Link to="">
                   Edit Card
                 </Link>
+                <Link to="">
+                  Delete Card
+                </Link>
                </p>
             </div>
           )
         )) :
         <p></p>
       }
+
+      <Link to={`/flashcards/${id}`}>
+        Back to {subject} Flash Cards
+      </Link>
 
     </div>
   );
