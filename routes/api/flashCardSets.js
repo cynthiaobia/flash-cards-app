@@ -24,10 +24,6 @@ router.put('/add-card/:id', flashCardSetsCtrl.addCard);
  */
 router.delete('/:id', flashCardSetsCtrl.remove);
 
-// DELETE: Delete a flash card from a set by set ID and card ID
-router.delete('/:setId/delete-card/:cardId', flashCardSetsCtrl.deleteCard);
-
-
 
 
 module.exports = router;

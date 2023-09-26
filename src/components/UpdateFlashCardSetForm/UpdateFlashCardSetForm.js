@@ -91,9 +91,9 @@ function UpdateFlashCardSetForm() {
                 <Link to="">
                   Edit Card
                 </Link>
-                <Link to={`/flashcards/${id}/delete-card/${flashcard._id}`}>
-  Delete Card
-</Link>
+                <Link to="">
+                  Delete Card
+                </Link>
                </p>
             </div>
           )

@@ -35,7 +35,3 @@ export function deleteCardSet(id) {
 export function addCard(data, id){
   return sendRequest(`${BASE_URL}/add-card/${id}`, 'PUT', data);
 }
-
-export function deleteFlashCard(setId, cardId) {
-  return sendRequest(`${BASE_URL}/${setId}/delete-card/${cardId}`, 'DELETE');
-}
